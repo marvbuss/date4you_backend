@@ -1,4 +1,4 @@
-package com.tutego.date4you.repository;
+package com.tutego.date4you.domain;
 
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Component
-public class FileSystem {  // https://tiny.one/2p8whad4
+public class FileSystem {
     private final Path root =
             Paths.get(System.getProperty("user.home")).resolve("fs");
 

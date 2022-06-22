@@ -2,9 +2,9 @@ package com.tutego.date4you.controller;
 
 import com.tutego.date4you.domain.Unicorn;
 import com.tutego.date4you.model.AuthCredentialsRequest;
+import com.tutego.date4you.model.UnicornProfileFormDataRequest;
 import com.tutego.date4you.service.UserDetailsServiceImpl;
 import com.tutego.date4you.util.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
+
     private final JwtUtil jwtUtil;
 
     private final UserDetailsServiceImpl userDetailsService;
@@ -58,8 +59,8 @@ public class AuthController {
     }
 
     @PostMapping("registration")
-    public ResponseEntity<?> registration(@RequestBody AuthCredentialsRequest request) {
-        UserDetails newUnicorn = userDetailsService.createUserByEmail(request.getUsername(), request.getPassword());
+    public ResponseEntity<?> registration(@RequestBody UnicornProfileFormDataRequest request) {
+        UserDetails newUnicorn = userDetailsService.createUser(request.getEmail(), request.getPassword(), request.getBirthdate(), request.getNickname(), request.getHornlength(), request.getGender(), request.getAttractedToGender(), request.getDescription());
         return ResponseEntity.ok().body(newUnicorn);
     }
 

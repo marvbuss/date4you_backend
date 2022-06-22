@@ -32,7 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return byEmailOpt.orElseThrow(() -> new UsernameNotFoundException("Invalid credentials"));
     }
 
-    public UserDetails createUserByEmail(String email, String password, LocalDate birthdate, String nickname, short hornlength, byte gender, String description, LocalDateTime lastseen){
+    public UserDetails createUser(String email, String password, LocalDate birthdate, String nickname, int hornlength, int gender, int attractedTo, String description){
         Unicorn newUnicorn = new Unicorn();
         Profile newProfile = new Profile();
 
@@ -40,11 +40,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         String encodedPassword = passwordEncoder.getPasswordEncoder().encode(password);
         newUnicorn.setPassword(encodedPassword);
+
         newUnicorn.setUsername(email);
         newProfile.setBirthdate(birthdate);
         newProfile.setNickname(nickname);
         newProfile.setHornlength(hornlength);
         newProfile.setGender(gender);
+        newProfile.setAttractedToGender(attractedTo);
+        newProfile.setDescription(description);
+        newProfile.setLastseen(LocalDateTime.now());
         newUnicorn.setProfile(newProfile);
 
         Unicorn savedUnicorn = unicornRepository.save(newUnicorn);

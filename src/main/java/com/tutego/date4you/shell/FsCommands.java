@@ -1,6 +1,6 @@
 package com.tutego.date4you.shell;
 
-import com.tutego.date4you.repository.FileSystem;
+import com.tutego.date4you.domain.FileSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.*;
 import org.springframework.util.unit.DataSize;

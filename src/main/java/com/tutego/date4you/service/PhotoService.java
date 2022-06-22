@@ -2,7 +2,7 @@ package com.tutego.date4you.service;
 
 import com.tutego.date4you.domain.Photo;
 import com.tutego.date4you.domain.Thumbnail;
-import com.tutego.date4you.repository.FileSystem;
+import com.tutego.date4you.domain.FileSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;

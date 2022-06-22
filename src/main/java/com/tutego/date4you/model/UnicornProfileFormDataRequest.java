@@ -5,15 +5,46 @@ import java.time.LocalDateTime;
 
 
 public class UnicornProfileFormDataRequest {
-    private String username;
+
+    private String email;
+
     private String password;
 
-    public String getUsername() {
-        return username;
+    private LocalDate birthdate;
+
+    private String nickname;
+
+    private int hornlength;
+
+    private int gender;
+
+    private Integer attractedToGender;
+
+    private String description;
+
+    private LocalDateTime lastseen;
+
+    public UnicornProfileFormDataRequest() {
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public UnicornProfileFormDataRequest(String email, String password, LocalDate birthdate, String nickname, int hornlength, int gender, Integer attractedToGender, String description, LocalDateTime lastseen) {
+        this.email = email;
+        this.password = password;
+        this.birthdate = birthdate;
+        this.nickname = nickname;
+        this.hornlength = hornlength;
+        this.gender = gender;
+        this.attractedToGender = attractedToGender;
+        this.description = description;
+        this.lastseen = lastseen;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -23,37 +54,13 @@ public class UnicornProfileFormDataRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-    private LocalDate birthdate;
-    private long id;
-    private String nickname;
-    private int hornlength;
-    private int gender;
-    private Integer attractedToGender;
-    private String description;
-    private LocalDateTime lastseen;
 
-    public UnicornProfileFormDataRequest() {
+    public LocalDate getBirthdate() {
+        return birthdate;
     }
 
-    public UnicornProfileFormDataRequest(long id, String nickname, int hornlength,
-                                         int gender, Integer attractedToGender, String description,
-                                         LocalDateTime lastseen, LocalDate birthdate) {
-        this.id = id;
-        this.nickname = nickname;
-        this.hornlength = hornlength;
-        this.gender = gender;
-        this.attractedToGender = attractedToGender;
-        this.description = description;
-        this.lastseen = lastseen;
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getNickname() {
@@ -80,11 +87,11 @@ public class UnicornProfileFormDataRequest {
         this.gender = gender;
     }
 
-    public Integer getAttractedToGender() {
+    public int getAttractedToGender() {
         return attractedToGender;
     }
 
-    public void setAttractedToGender(Integer attractedToGender) {
+    public void setAttractedToGender(int attractedToGender) {
         this.attractedToGender = attractedToGender;
     }
 
@@ -104,11 +111,11 @@ public class UnicornProfileFormDataRequest {
         this.lastseen = lastseen;
     }
 
-
     @Override
     public String toString() {
-        return "ProfileFormData{" +
-                "id=" + id +
+        return "UnicornProfileFormDataRequest{" +
+                ", password='" + password + '\'' +
+                ", birthdate=" + birthdate +
                 ", nickname='" + nickname + '\'' +
                 ", hornlength=" + hornlength +
                 ", gender=" + gender +

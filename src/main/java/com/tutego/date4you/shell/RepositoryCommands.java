@@ -23,11 +23,6 @@ public class RepositoryCommands {
         profiles.findAll().forEach(System.out::println);
     }
 
-//    @ShellMethod("Unicorn with email exists")
-//    public boolean existsByEmail(String email) {
-//        return unicorns.existsByEmail(email);
-//    }
-
     @ShellMethod("save photo")
     public void savePhoto(String photoPath, String profileId) {
         Photo newPhoto = new Photo();
