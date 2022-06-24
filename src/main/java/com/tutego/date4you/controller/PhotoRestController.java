@@ -31,20 +31,10 @@ public class PhotoRestController {
 
     @GetMapping(path = "photo", produces = MediaType.IMAGE_JPEG_VALUE)
     public byte[] getPhoto(@AuthenticationPrincipal Unicorn unicorn, @RequestParam String name) throws IOException {
-        System.out.println(name);
         Optional<byte[]> picture = ps.download(name);
         return picture.orElse(null);
     }
 
-
-        @GetMapping( "/random" )
-        public byte[] randomPhoto() throws IOException {
-            Resource resource = new UrlResource(
-                    "https://getwallpapers.com/wallpaper/full/1/1/7/264012.jpg"
-            );
-            InputStream inputStream = resource.getInputStream();
-            return StreamUtils.copyToByteArray( inputStream );
-        }
 }
 
 
