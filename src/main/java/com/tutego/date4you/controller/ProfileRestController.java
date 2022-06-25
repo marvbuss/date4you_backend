@@ -13,6 +13,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/profiles")
@@ -31,6 +32,12 @@ public class ProfileRestController {
         Unicorn currentUser = (Unicorn) userDetailsService.loadUserByUsername(unicorn.getUsername());
         Profile currentProfile = currentUser.getProfile();
         return ResponseEntity.ok().body(currentProfile);
+    }
+
+    @GetMapping("profile/{id}")
+    public ResponseEntity<?> getOtherProfile(@AuthenticationPrincipal Unicorn unicorn, @PathVariable("id") Long profileId) {
+        Optional<Profile> otherProfile = profileService.getProfile(profileId);
+        return ResponseEntity.ok().body(otherProfile);
     }
 
     @GetMapping("matches")

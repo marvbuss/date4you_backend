@@ -1,7 +1,6 @@
 package com.tutego.date4you.service;
 
 import com.tutego.date4you.domain.Photo;
-import com.tutego.date4you.domain.Thumbnail;
 import com.tutego.date4you.domain.FileSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,13 +16,13 @@ import java.util.UUID;
 @Validated
 public class PhotoService {
     private final FileSystem fs;
-    private final Thumbnail thumbnail;
+
     ;
 
     @Autowired
-    public PhotoService(FileSystem fs, Thumbnail thumbnail) {
+    public PhotoService(FileSystem fs) {
         this.fs = fs;
-        this.thumbnail = thumbnail;
+
     }
 
     public Optional<byte[]> download(String imageName) {
@@ -43,10 +42,6 @@ public class PhotoService {
 
         // First: store original image
         fs.store(imageName + ".jpg", imageBytes);
-
-        // Second: store thumbnail
-        byte[] thumbnailBytes = thumbnail.thumbnail(imageBytes);
-        fs.store(imageName + "-thumb.jpg", thumbnailBytes);
 
         return imageName;
     }
