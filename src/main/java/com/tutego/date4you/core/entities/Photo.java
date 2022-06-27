@@ -1,4 +1,4 @@
-package com.tutego.date4you.domain;
+package com.tutego.date4you.core.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.springframework.data.annotation.CreatedDate;

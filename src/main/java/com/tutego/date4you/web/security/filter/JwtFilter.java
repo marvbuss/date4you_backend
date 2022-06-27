@@ -1,6 +1,6 @@
-package com.tutego.date4you.filter;
+package com.tutego.date4you.web.security.filter;
 
-import com.tutego.date4you.repository.UnicornRepository;
+import com.tutego.date4you.core.repository.UnicornRepository;
 import com.tutego.date4you.util.JwtUtil;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -36,7 +36,7 @@ public class JwtFilter extends OncePerRequestFilter {
         // Get authorization header and validate
         final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (!StringUtils.hasText(header) || (StringUtils.hasText(header) && !header.startsWith("Bearer "))) {
-            chain.doFilter(request, response);
+            chain.doFilter(request, response); //will send error unauthorized
             return;
         }
 
@@ -49,7 +49,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
         // Get jwt token and validate
         if (!jwtUtil.validateToken(token, userDetails)) {
-            chain.doFilter(request, response);
+            chain.doFilter(request, response); //will send error unauthorized
             return;
         }
 
@@ -64,6 +64,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 new WebAuthenticationDetailsSource().buildDetails(request)
         );
 
+        //this is where the authentication happens and the user is now valid
         SecurityContextHolder.getContext().setAuthentication(authentication);
         chain.doFilter(request, response);
     }

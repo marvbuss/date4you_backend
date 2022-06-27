@@ -1,6 +1,6 @@
-package com.tutego.date4you.config;
+package com.tutego.date4you.web.security;
 
-import com.tutego.date4you.filter.JwtFilter;
+import com.tutego.date4you.web.security.filter.JwtFilter;
 import com.tutego.date4you.util.CustomPasswordEncoder;
 
 import org.springframework.context.annotation.Bean;

@@ -1,21 +1,17 @@
-package com.tutego.date4you.controller;
+package com.tutego.date4you.web.controller;
 
-import com.tutego.date4you.domain.Unicorn;
+import com.tutego.date4you.core.entities.Unicorn;
 import com.tutego.date4you.service.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Optional;
 
 @RestController

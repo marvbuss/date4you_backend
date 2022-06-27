@@ -1,8 +1,8 @@
-package com.tutego.date4you.controller;
+package com.tutego.date4you.web.controller;
 
-import com.tutego.date4you.domain.Unicorn;
-import com.tutego.date4you.model.AuthCredentialsRequest;
-import com.tutego.date4you.model.UnicornProfileFormDataRequest;
+import com.tutego.date4you.core.entities.Unicorn;
+import com.tutego.date4you.service.model.AuthCredentialsRequest;
+import com.tutego.date4you.service.model.UnicornProfileFormDataRequest;
 import com.tutego.date4you.service.UserDetailsServiceImpl;
 import com.tutego.date4you.util.JwtUtil;
 import org.springframework.http.HttpHeaders;

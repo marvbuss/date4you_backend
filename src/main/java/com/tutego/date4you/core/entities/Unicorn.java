@@ -1,4 +1,4 @@
-package com.tutego.date4you.domain;
+package com.tutego.date4you.core.entities;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -1,7 +1,7 @@
 package com.tutego.date4you.service;
 
-import com.tutego.date4you.domain.Profile;
-import com.tutego.date4you.repository.ProfileRepository;
+import com.tutego.date4you.core.entities.Profile;
+import com.tutego.date4you.core.repository.ProfileRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;

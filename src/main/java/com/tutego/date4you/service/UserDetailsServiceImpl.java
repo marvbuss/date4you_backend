@@ -1,8 +1,8 @@
 package com.tutego.date4you.service;
 
-import com.tutego.date4you.domain.Profile;
-import com.tutego.date4you.domain.Unicorn;
-import com.tutego.date4you.repository.UnicornRepository;
+import com.tutego.date4you.core.entities.Profile;
+import com.tutego.date4you.core.entities.Unicorn;
+import com.tutego.date4you.core.repository.UnicornRepository;
 import com.tutego.date4you.util.CustomPasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

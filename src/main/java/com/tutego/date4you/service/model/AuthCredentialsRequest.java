@@ -1,4 +1,4 @@
-package com.tutego.date4you.model;
+package com.tutego.date4you.service.model;
 
 public class AuthCredentialsRequest {
 

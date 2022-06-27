@@ -1,6 +1,6 @@
-package com.tutego.date4you.repository;
+package com.tutego.date4you.core.repository;
 
-import com.tutego.date4you.domain.Profile;
+import com.tutego.date4you.core.entities.Profile;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,7 +1,7 @@
 package com.tutego.date4you.service;
 
-import com.tutego.date4you.domain.Photo;
-import com.tutego.date4you.domain.FileSystem;
+import com.tutego.date4you.core.entities.Photo;
+import com.tutego.date4you.core.entities.FileSystem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -16,8 +16,6 @@ import java.util.UUID;
 @Validated
 public class PhotoService {
     private final FileSystem fs;
-
-    ;
 
     @Autowired
     public PhotoService(FileSystem fs) {

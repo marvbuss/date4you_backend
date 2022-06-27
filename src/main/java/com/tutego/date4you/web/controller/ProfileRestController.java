@@ -1,8 +1,8 @@
-package com.tutego.date4you.controller;
+package com.tutego.date4you.web.controller;
 
 
-import com.tutego.date4you.domain.Profile;
-import com.tutego.date4you.domain.Unicorn;
+import com.tutego.date4you.core.entities.Profile;
+import com.tutego.date4you.core.entities.Unicorn;
 
 import com.tutego.date4you.service.ProfileService;
 import com.tutego.date4you.service.UserDetailsServiceImpl;
